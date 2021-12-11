@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="rosa_200">#FAACD1</color>
+    <color name="rosa_500">#FF8EC3</color>
+    <color name="rosa_700">#FFFF56A6</color>
+    <color name="rosa">#FFFF56A6</color>
+    <color name="rojo">#FFff0000</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray" >#C8C8C8</color>>
+</resources>

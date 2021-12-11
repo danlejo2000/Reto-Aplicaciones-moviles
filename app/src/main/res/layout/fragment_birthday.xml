@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment_birthday">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="174dp"
+                android:layout_height="139dp"
+                android:layout_weight="1"
+                android:src="@drawable/bjunior" />
+
+            <LinearLayout
+                android:layout_width="256dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Paquete Junior contiene: \n \n - servicio animacion \n - servicio gastronomico" />
+
+                <Button
+                    android:id="@+id/btnpedirbjunior"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="pide ya" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="173dp"
+                android:layout_height="139dp"
+                android:layout_weight="1"
+                android:src="@drawable/bamateur" />
+
+            <LinearLayout
+                android:layout_width="256dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Paquete Amateur contiene: \n \n - servicio gastronimico \n - servicio musica \n - servicio logistica" />
+
+                <Button
+                    android:id="@+id/btnpedirbamateur"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="pide ya" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="142dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="13dp"
+                android:layout_height="139dp"
+                android:layout_weight="1"
+                android:src="@drawable/bpro" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Paquete Pro contiene : \n \n - servicio gastronimico \n - servicio musica \n - servicio logistica\n - servicio animacion" />
+
+                <Button
+                    android:id="@+id/btnpedirbpro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="pide ya" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>

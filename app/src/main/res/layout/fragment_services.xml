@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".fragment_services">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/lbl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aprovecha las mejores ofertas!!!!!" />
+
+        <ImageView
+            android:id="@+id/imgCumpleanios"
+            android:layout_width="match_parent"
+            android:layout_height="123dp"
+            android:src="@drawable/cake_birthday_icon_176817" />
+
+        <TextView
+            android:id="@+id/lblDescripcionCumpleanios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cumpleaños" />
+
+        <Button
+            android:id="@+id/btnExplorarCumpleanios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Explorar" />
+
+        <ImageView
+            android:id="@+id/imgPrimeraComunion"
+            android:layout_width="match_parent"
+            android:layout_height="103dp"
+            android:src="@drawable/clipart2992387" />
+
+        <TextView
+            android:id="@+id/lblDescripcionPrimComunion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Primeras comuniones" />
+
+        <Button
+            android:id="@+id/btnExplorarPrimComunion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Explorar" />
+
+        <ImageView
+            android:id="@+id/imgBodas"
+            android:layout_width="match_parent"
+            android:layout_height="108dp"
+            android:src="@drawable/e6845ad6a99742e8823bd5a48661d8b7" />
+
+        <TextView
+            android:id="@+id/lblDescripcionBoda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bodas" />
+
+        <Button
+            android:id="@+id/btnExplorarBodas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Explorar" />
+
+    </LinearLayout>
+</FrameLayout>

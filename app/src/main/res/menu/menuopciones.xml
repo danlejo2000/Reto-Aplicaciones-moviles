@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/ItemServicios"
+        android:icon="@drawable/servicios"
+        android:title="Servicios" />
+    <item
+        android:id="@+id/ItemProducto"
+        android:icon="@drawable/producto"
+        android:title="Producto" />
+    <item
+        android:id="@+id/ItemSucursales"
+        android:icon="@drawable/sucursales"
+        android:title="Sucursales" />
+
+
+
+</menu>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.21770833333333334" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/drawable/favorite_gray.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/drawable/favorite_red.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/drawable/favoritos.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/drawable/inicio.xml" value="0.21770833333333334" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/drawable/servicios.xml" value="0.21770833333333334" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/drawable/sucursales.xml" value="0.21770833333333334" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/activity_main2.xml" value="0.33" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/activity_main3.xml" value="0.25" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/activity_main4.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/activity_main5.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/activity_main6.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/activity_main7.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/fav_item.xml" value="0.22" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/fragment__favorites.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/fragment__register.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/fragment_birthday.xml" value="0.33" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/fragment_branch.xml" value="0.5" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/fragment_favorites.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/fragment_favs.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/fragment_first_communion.xml" value="0.33" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/fragment_furniture.xml" value="0.33" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/fragment_ilumination.xml" value="0.5" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/fragment_login.xml" value="0.33" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/fragment_marriage.xml" value="0.33" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/fragment_products.xml" value="0.33" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/fragment_register.xml" value="0.25" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/fragment_services.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/fragment_tent.xml" value="0.21" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/itemIlumination.xml" value="0.2203125" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/layout/itemilumination.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/menu/menuopciones.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SurtiMercanciMax/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2140625" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
