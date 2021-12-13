@@ -15,6 +15,10 @@
         android:id="@+id/ItemSucursales"
         android:icon="@drawable/sucursales"
         android:title="Sucursales" />
+    <item
+        android:id="@+id/ItemFavoritos"
+        android:icon="@drawable/favoritos"
+        android:title="Favoritos" />
 
 
 

@@ -7,152 +7,19 @@
     tools:context=".fragment_ilumination">
 
     <LinearLayout
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:orientation="vertical">
-
-      <LinearLayout
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:orientation="horizontal">
+          android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="ILUMINACION"
+            />
 
-          <ImageView
-              android:id="@+id/imgfavluzlaser1"
-              android:layout_width="158dp"
-              android:layout_height="match_parent"
-              android:layout_weight="1"
-              android:src="@drawable/llaser" />
-
-          <LinearLayout
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_weight="1"
-              android:orientation="vertical">
-
-              <TextView
-                  android:id="@+id/textView22"
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:layout_weight="1"
-                  android:text="Luces laser" />
-
-              <LinearLayout
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:layout_weight="1"
-                  android:orientation="horizontal">
-
-                  <Button
-                      android:id="@+id/btncomparluceslaser1"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:layout_weight="1"
-                      android:text="Comprar" />
-
-                  <CheckBox
-                      android:id="@+id/btnfavluceslaser1"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:layout_weight="1"
-                      android:text="favoritos" />
-
-              </LinearLayout>
-
-          </LinearLayout>
-
-      </LinearLayout>
-
-      <LinearLayout
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:orientation="horizontal">
-
-          <ImageView
-              android:id="@+id/imgfavluzdiscoteca1"
-              android:layout_width="158dp"
-              android:layout_height="match_parent"
-              android:layout_weight="1"
-              android:src="@drawable/ldiscoteca" />
-
-          <LinearLayout
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_weight="1"
-              android:orientation="vertical">
-
-              <TextView
-                  android:id="@+id/textView23"
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:text="luces de discoteca" />
-
-              <LinearLayout
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:orientation="horizontal">
-
-                  <Button
-                      android:id="@+id/btncomprarlucesdiscoteca1"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:layout_weight="1"
-                      android:text="Comprar" />
-
-                  <CheckBox
-                      android:id="@+id/btnfavlucesdiscoteca1"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:layout_weight="1"
-                      android:text="favoritos" />
-              </LinearLayout>
-
-          </LinearLayout>
-      </LinearLayout>
-
-      <LinearLayout
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:orientation="horizontal">
-
-          <ImageView
-              android:id="@+id/imgfavluzcadena1"
-              android:layout_width="158dp"
-              android:layout_height="match_parent"
-              android:layout_weight="1"
-              android:src="@drawable/lcadena" />
-
-          <LinearLayout
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_weight="1"
-              android:orientation="vertical">
-
-              <TextView
-                  android:id="@+id/textView24"
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:text="luces en cadena" />
-
-              <LinearLayout
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:orientation="horizontal">
-
-                  <Button
-                      android:id="@+id/btncomprarlucescadena1"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:layout_weight="1"
-                      android:text="Comprar" />
-
-                  <CheckBox
-                      android:id="@+id/btnfavlucescadena1"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:layout_weight="1"
-                      android:text="favoritos" />
-              </LinearLayout>
-          </LinearLayout>
-      </LinearLayout>
+        <ListView
+            android:id="@+id/lista_productos_iluminacion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
   </LinearLayout>
 </FrameLayout>

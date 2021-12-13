@@ -1,8 +1,6 @@
 package usa.Ciclo4.surtimercancimax;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity3 extends AppCompatActivity {
+public class Registro extends AppCompatActivity {
 
     EditText us, pass, nombre,apellido;
     Button btnReg,btnCancelar;
@@ -20,7 +18,7 @@ public class MainActivity3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.registro);
 
         us=(EditText) findViewById(R.id.txtUsuarioRegistro);
         pass=(EditText) findViewById(R.id.txtContraseniaRegistro);
@@ -42,18 +40,18 @@ public class MainActivity3 extends AppCompatActivity {
 
                 if(!u.isNull())
                 {
-                    Toast.makeText(MainActivity3.this, "Complete todos los campos.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Registro.this, "Complete todos los campos.", Toast.LENGTH_LONG).show();
                 }
                 else if(dao.insertUser(u))
                 {
-                    Toast.makeText(MainActivity3.this, "Registro existoso.", Toast.LENGTH_LONG).show();
-                    Intent i=new Intent(MainActivity3.this, MainActivity.class);
+                    Toast.makeText(Registro.this, "Registro existoso.", Toast.LENGTH_LONG).show();
+                    Intent i=new Intent(Registro.this, Login.class);
                     startActivity(i);
 
                 }
                 else
                 {
-                    Toast.makeText(MainActivity3.this, "Usuario Registrado anteriormente.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Registro.this, "Usuario Registrado anteriormente.", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -61,7 +59,7 @@ public class MainActivity3 extends AppCompatActivity {
         btnCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(MainActivity3.this, MainActivity.class);
+                Intent i=new Intent(Registro.this, Login.class);
                 startActivity(i);
             }
         });

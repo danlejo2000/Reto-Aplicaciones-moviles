@@ -1,121 +1,54 @@
 package usa.Ciclo4.surtimercancimax;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
+import androidx.fragment.app.Fragment;
 
-
-import android.app.Notification;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.view.MenuItem;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText user, pass;
-    Button btniniciarsesion,btnregistrar;
-    daouser dao;
+    private BottomNavigationView bottomNavigationView;
+    Fragment servicesf;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //fragment_splash
 
-        user=(EditText) findViewById(R.id.txtNombreUsuario);
-        pass=(EditText) findViewById(R.id.txtContrasenia);
+        servicesf = new fragment_services();
+        bottomNavigationView=findViewById(R.id.bottomnav);
 
-        btniniciarsesion=(Button) findViewById(R.id.btniniciarsesion);
-        btnregistrar=(Button) findViewById(R.id.btnregistrarse);
-
-        dao=new daouser(this);
-
-        btniniciarsesion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String u=user.getText().toString();
-                String p=pass.getText().toString();
-
-                if(u.equals("")&&p.equals(""))
-                {
-                    Toast.makeText(MainActivity.this, "Complete todos los campos.", Toast.LENGTH_LONG).show();
-                }
-                else if(dao.login(u,p)==1)
-                {
-                    user ux=dao.getusuario(u,p);
-
-                    Toast.makeText(MainActivity.this, "Bienvenido "+u+".", Toast.LENGTH_LONG).show();
-                    Notificacion();
-                    Intent i= new Intent(MainActivity.this,MainActivity2.class);
-                    startActivity(i);
-
-                }
-                else
-                {
-                    Toast.makeText(MainActivity.this, "Datos incorrectos.", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-
-        btnregistrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent i= new Intent(MainActivity.this,MainActivity3.class);
-                startActivity(i);
-            }
-        });
-
-
+        bottomNavigationView.setOnNavigationItemSelectedListener(bottomNavMethod);
+        getSupportFragmentManager().beginTransaction().replace(R.id.contenedorFragment, servicesf).commit();
     }
-    private void Notificacion()
-    {
-       /* NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.drawable.ic_launcher_foreground)
-                .setContentTitle("Festejando Juntos")
-                .setContentText("Las ofertas han llegado :)");*/
+    /*barra de navegacion inferior*/
+    private BottomNavigationView.OnNavigationItemSelectedListener bottomNavMethod = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment fragment= null;
 
-       /* Intent NotificationIntent = new Intent(this, MainActivity.class);
-        PendingIntent contentIntent=PendingIntent.getActivity(this,0,NotificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        builder.setContentIntent(contentIntent);*/
-
-        NotificationManager manager=(NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        if(Build.VERSION.SDK_INT>=26)
-        {
-            String id="channel_1";
-            String description = "143";
-            int importance =NotificationManager.IMPORTANCE_LOW;
-            NotificationChannel channel= new NotificationChannel(id,description,importance);
-            //                     channel.enableLights(true);
-//                     channel.enableVibration(true);
-            manager.createNotificationChannel(channel);
-            Notification notification = new Notification.Builder(MainActivity.this, id)
-                    .setCategory(Notification.CATEGORY_MESSAGE)
-                    .setSmallIcon(R.mipmap.ic_launcher)
-                    .setContentTitle("Festejando Juntos")
-                    .setContentText("Las ofertas han llegado :)")
-                    .setAutoCancel(true)
-                    .build();
-            manager.notify(1, notification);
+            switch (item.getItemId())
+            {
+                case R.id.ItemServicios:
+                    fragment=new fragment_services();
+                    break;
+                case R.id.ItemProducto:
+                    fragment=new fragment_products();
+                    break;
+                case R.id.ItemSucursales:
+                    fragment=new fragment_branch();
+                    break;
+                case R.id.ItemFavoritos:
+                    fragment=new fragment_favorites();
+            }
+            getSupportFragmentManager().beginTransaction().replace(R.id.contenedorFragment, fragment).commit();
+            return true;
         }
-        else
-        {
-            //When sdk version is less than26
-            Notification notification = new NotificationCompat.Builder(MainActivity.this)
-                    .setContentTitle("Festejando Juntos")
-                    .setContentText("Las ofertas han llegado :)")
-                    .setSmallIcon(R.mipmap.ic_launcher)
-                    .build();
-            manager.notify(1,notification);
-        }
-
-
-    }
+    };
 }
