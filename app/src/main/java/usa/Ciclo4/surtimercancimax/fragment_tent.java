@@ -11,6 +11,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -21,11 +33,11 @@ public class fragment_tent extends Fragment {
     int[] imagen= {R.drawable.dxd,R.drawable.txd,R.drawable.txt};
     String TAG ="fragment_tent";
     View v;
-    int i=0;
 
-    ListView listaProductosCarpas;
+    ListView lista_Productos_Carpas;
     Adapter adapter;
-    DBMotorBase conectar;
+    TextView prueba;
+    //DBMotorBase conectar;
 
 
     @Override
@@ -33,10 +45,10 @@ public class fragment_tent extends Fragment {
         // Inflate the layout for this fragment
         v= inflater.inflate(R.layout.fragment_tent, container, false);
 
-        listaProductosCarpas= (ListView)v.findViewById(R.id.lista_productos_carpas);
+        lista_Productos_Carpas= (ListView)v.findViewById(R.id.lista_productos_carpas);
         adapter= new Adapter(getTablaProductos(),getContext());
-        listaProductosCarpas.setAdapter(adapter);
-
+        lista_Productos_Carpas.setAdapter(adapter);
+        prueba = (TextView) v.findViewById(R.id.prueba);
         return v;
 
 
@@ -44,8 +56,48 @@ public class fragment_tent extends Fragment {
 
     private ArrayList<Entidad> getTablaProductos()
     {
-        ArrayList<Entidad> lista_Productos_Carpas = new ArrayList<>();
-        conectar= new DBMotorBase(getContext(),"TiendaProductos",null,1);
+        ArrayList<Entidad> listaProductosCarpas = new ArrayList<>();
+
+        String url="https://g3c9316d4414cae-db202112170848.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/surtimercancimax/productos_carpas";
+
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                //***********************************************************
+                try {
+                    JSONArray jsonArray = response.getJSONArray("items");
+                    for(int i = 0; i < jsonArray.length(); i++){
+                        JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+
+                        String titulo = jsonObject.getString("titulo");
+                        String descripcion = jsonObject.getString("descripcion");
+
+                        listaProductosCarpas.add(new Entidad(imagen[i], titulo, descripcion));
+                        prueba.append(titulo + '\n');
+
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                //***********************************************************
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+
+        requestQueue.add(jsonObjectRequest);
+        /* ================================================================================================== */
+
+        return listaProductosCarpas;
+    }
+}
+/*conectar= new DBMotorBase(getContext(),"TiendaProductos",null,1);
         SQLiteDatabase db_leer = conectar.getReadableDatabase();
         Cursor cursor = db_leer.rawQuery("SELECT * FROM productos_carpas", null);
 
@@ -71,5 +123,4 @@ public class fragment_tent extends Fragment {
 
         return listaitems;
 
-    }
-}
+    }*/

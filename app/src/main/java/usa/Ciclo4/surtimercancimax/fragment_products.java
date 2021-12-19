@@ -15,6 +15,7 @@ public class fragment_products extends Fragment {
     Button btntent;
     Button btnfurniture;
     Button brnilumination;
+    FragmentTransaction intercambio;
 
     public fragment_products() {
         // Required empty public constructor

@@ -14,6 +14,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -25,7 +37,8 @@ public class fragment_ilumination extends Fragment {
 
     ListView listaProductosIluminacion;
     Adapter adapter;
-    DBMotorBase conectar;
+    TextView prueba;
+    //DBMotorBase conectar;
 
 
     @Override
@@ -36,6 +49,7 @@ public class fragment_ilumination extends Fragment {
         listaProductosIluminacion= (ListView)v.findViewById(R.id.lista_productos_iluminacion);
         adapter= new Adapter(getTablaProductos(),getContext());
         listaProductosIluminacion.setAdapter(adapter);
+        prueba = (TextView) v.findViewById(R.id.prueba3);
 
 
         return v;
@@ -43,6 +57,49 @@ public class fragment_ilumination extends Fragment {
 
     }
 
+    private ArrayList<Entidad> getTablaProductos()
+    {
+        ArrayList<Entidad> lista_Productos_Iluminacion = new ArrayList<>();
+
+        String url="https://g3c9316d4414cae-db202112170848.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/surtimercancimax/productos_luces";
+
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                //***********************************************************
+                try {
+                    JSONArray jsonArray = response.getJSONArray("items");
+                    for(int i = 0; i < jsonArray.length(); i++){
+                        JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+
+                        String titulo = jsonObject.getString("titulo");
+                        String descripcion = jsonObject.getString("descripcion");
+
+                        lista_Productos_Iluminacion.add(new Entidad(imagen[i], titulo, descripcion));
+                        prueba.append(titulo + '\n');
+
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                //***********************************************************
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+
+        requestQueue.add(jsonObjectRequest);
+        /* ================================================================================================== */
+
+        return lista_Productos_Iluminacion;
+    }
+/*
     private ArrayList<Entidad> getTablaProductos()
     {
         ArrayList<Entidad> lista_Productos_Iluminacion = new ArrayList<>();
@@ -54,7 +111,7 @@ public class fragment_ilumination extends Fragment {
 
         while(cursor.moveToNext()){
             Log.v(TAG, "dentro de while");
-            lista_Productos_Iluminacion.add(new Entidad(cursor.getInt(0), cursor.getString(0), cursor.getString(1)));
+            lista_Productos_Iluminacion.add(new Entidad(imagen[i], cursor.getString(0), cursor.getString(1)));
             Log.v(TAG, "despues del while");
             i++;
         }
@@ -72,5 +129,5 @@ public class fragment_ilumination extends Fragment {
 
         return listaitems;
 
-    }
+    }*/
 }

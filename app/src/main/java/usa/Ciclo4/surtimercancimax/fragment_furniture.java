@@ -11,6 +11,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -23,8 +35,8 @@ public class fragment_furniture extends Fragment {
 
     ListView listaProductosMuebles;
     Adapter adapter;
-    DBMotorBase conectar;
-
+    //DBMotorBase conectar;
+    TextView prueba;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         v= inflater.inflate(R.layout.fragment_furniture, container, false);
@@ -32,11 +44,55 @@ public class fragment_furniture extends Fragment {
         listaProductosMuebles= (ListView)v.findViewById(R.id.lista_productos_muebleria);
         adapter= new Adapter(getTablaProductos(),getContext());
         listaProductosMuebles.setAdapter(adapter);
-
+        prueba = (TextView) v.findViewById(R.id.prueba2);
         return v;
     }
 
 
+    private ArrayList<Entidad> getTablaProductos()
+    {
+        ArrayList<Entidad> listaProductosMuebles = new ArrayList<>();
+
+        String url="https://g3c9316d4414cae-db202112170848.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/surtimercancimax/productos_Muebles";
+
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                //***********************************************************
+                try {
+                    JSONArray jsonArray = response.getJSONArray("items");
+                    for(int i = 0; i < jsonArray.length(); i++){
+                        JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+
+                        String titulo = jsonObject.getString("titulo");
+                        String descripcion = jsonObject.getString("descripcion");
+
+                        listaProductosMuebles.add(new Entidad(imagen[i], titulo, descripcion));
+                        prueba.append(titulo + '\n');
+
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                //***********************************************************
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+
+        requestQueue.add(jsonObjectRequest);
+        /* ================================================================================================== */
+
+        return listaProductosMuebles;
+    }
+
+/*
     private ArrayList<Entidad> getTablaProductos()
     {
         ArrayList<Entidad> lista_Productos_muebleria = new ArrayList<>();
@@ -65,5 +121,5 @@ public class fragment_furniture extends Fragment {
 
         return listaitems;
 
-    }
+    }*/
 }

@@ -17,6 +17,11 @@
             android:text="ILUMINACION"
             />
 
+        <TextView
+            android:id="@+id/prueba3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <ListView
             android:id="@+id/lista_productos_iluminacion"
             android:layout_width="match_parent"

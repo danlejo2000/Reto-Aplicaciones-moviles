@@ -18,6 +18,8 @@ public class DBMotorBase extends SQLiteOpenHelper {
         // favoritos
 
 
+
+
         /*db.execSQL("INSERT INTO favoritos VALUES (0, 'Carpa2x2','No')");
         db.execSQL("INSERT INTO favoritos VALUES (1, 'Carpa3x2','Se')");
         db.execSQL("INSERT INTO favoritos VALUES (2, 'Carpa3x3','Que')");
@@ -47,11 +49,22 @@ public class DBMotorBase extends SQLiteOpenHelper {
 
         //servicios
 
-        db.execSQL("CREATE TABLE servicios (titulo TEXT,descripcion TEXT)");
+        db.execSQL("CREATE TABLE servicios_Cumple (imagen INT,titulo TEXT,descripcion TEXT)");
         //---- Registros
-        db.execSQL("INSERT INTO servicios VALUES ('Cumpleaños','aaa')");
-        db.execSQL("INSERT INTO servicios VALUES ('primeras comuniones','bbb')");
-        db.execSQL("INSERT INTO servicios VALUES ('bodas','ccc')");
+        db.execSQL("INSERT INTO servicios_Cumple VALUES (0,'Paquete Junior','aaa')");
+        db.execSQL("INSERT INTO servicios_Cumple VALUES (1,'Paquete Amateur','aaa')");
+        db.execSQL("INSERT INTO servicios_Cumple VALUES (2,'Paquete Pro','aaa')");
+
+        db.execSQL("CREATE TABLE servicios_Primeras_C (imagen INT,titulo TEXT,descripcion TEXT)");
+
+        db.execSQL("INSERT INTO servicios_Primeras_C VALUES (3,'Paquete basico','bbb')");
+        db.execSQL("INSERT INTO servicios_Primeras_C VALUES (4,'Paquete pro','bbb')");
+
+
+        db.execSQL("CREATE TABLE servicios_Bodas (imagen INT,titulo TEXT,descripcion TEXT)");
+
+        db.execSQL("INSERT INTO servicios_Bodas VALUES (5,'Paquete basico','bbb')");
+        db.execSQL("INSERT INTO servicios_Bodas VALUES (6,'Paquete inuendo','bbb')");
 
     }
 
@@ -61,7 +74,9 @@ public class DBMotorBase extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE productos_carpas");
         db.execSQL("DROP TABLE productos_Muebles");
         db.execSQL("DROP TABLE productos_luces");
-        db.execSQL("DROP TABLE servicios");
+        db.execSQL("DROP TABLE servicios_Cumple");
+        db.execSQL("DROP TABLE servicios_Primeras_C");
+        db.execSQL("DROP TABLE servicios_Bodas");
         onCreate(db);
     }
 
